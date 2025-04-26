@@ -1,0 +1,46 @@
+{
+  "name": "@pemako.io/pemako-client",
+  "version": "0.1.0",
+  "description": "React SDK that makes your app Pemako-aware—drop in two-way AI chat with dynamic Gompa components in just a few lines.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbasilveira/pameko-client.git"
+  },
+  "keywords": [
+    "pemako",
+    "pemako-client",
+    "gompa",
+    "namche",
+    "react",
+    "sdk",
+    "ai",
+    "llm",
+    "chat",
+    "two-way-chat",
+    "component-aware",
+    "ui-framework",
+    "typescript",
+    "hooks",
+    "websocket",
+    "decentralised-ux"
+  ],
+  "author": "Guilherme da Silveira <gbasilveira@pemako.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gbasilveira/pameko-client/issues"
+  },
+  "homepage": "https://github.com/gbasilveira/pameko-client#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.2",
+    "@types/uuid": "^10.0.0",
+    "typescript": "^5.8.3"
+  }
+}
