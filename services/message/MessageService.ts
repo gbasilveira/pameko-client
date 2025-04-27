@@ -10,6 +10,7 @@ import {
   GompaActionParams,
   StructuredGompaActionData
 } from '../../types';
+import { BackendResponseItem as BackendResponseItemType } from '../../types/backendTypes';
 
 export const addMessage = (
   sessionId: string, 
@@ -33,7 +34,7 @@ export const processBackendResponseItem = (
   sessionId: string, 
   item: BackendResponseItem,
   addMessage: (sessionId: string, message: TextMessage | GompaMessage | LinkMessage) => void,
-  handleBackendAction: (sessionId: string, action: Extract<BackendResponseItem, { type: 'action' }>) => void
+  handleBackendAction: (sessionId: string, action: Extract<BackendResponseItemType, { type: 'action' }>) => void
 ) => {
   const messageId = uuidv4();
   
@@ -73,7 +74,7 @@ export const processBackendResponseItem = (
       break;
       
     case 'action':
-      handleBackendAction(sessionId, item);
+      handleBackendAction(sessionId, item as Extract<BackendResponseItemType, { type: 'action' }>);
       break;
   }
 };

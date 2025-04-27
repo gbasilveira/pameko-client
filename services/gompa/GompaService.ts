@@ -6,6 +6,7 @@ import {
   InteractiveGompaRef, 
   InteractiveGompaProps 
 } from '../../types';
+import { BackendResponseItem as BackendResponseItemType } from '../../types/backendTypes';
 
 export const registerGompaType = (
   gompaRegistryRef: React.MutableRefObject<Map<string, React.ComponentType<any>>>,
@@ -85,14 +86,14 @@ export const findGompaRef = (
 
 export const handleBackendAction = (
   sessionId: string, 
-  action: Extract<BackendResponseItem, { type: 'action' }>,
+  action: Extract<BackendResponseItemType, { type: 'action' }>,
   pemakoSessions: Map<string, PemakoSession>,
   addMessage: (sessionId: string, message: any) => void,
-  findGompaRef: (sessionId: string, instanceId: string) => React.RefObject<InteractiveGompaRef> | undefined,
+  findGompaRefFn: (sessionId: string, instanceId: string) => React.RefObject<InteractiveGompaRef> | undefined,
   socketRef: React.RefObject<WebSocket | null>,
   isConnected: boolean
 ) => {
-  const gompaRef = findGompaRef(sessionId, action.targetComponentId);
+  const gompaRef = findGompaRefFn(sessionId, action.targetComponentId);
   if (!gompaRef || !gompaRef.current) {
     console.warn(`Action target gompa not found or ref not current: ${action.targetComponentId}`);
     addMessage(sessionId, {
