@@ -1,6 +1,6 @@
 {
   "name": "@pemako.io/pemako-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React SDK that makes your app Pemako-aware—drop in two-way AI chat with dynamic Gompa components in just a few lines.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
